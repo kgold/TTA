@@ -1,0 +1,7 @@
+See top of TTA.py for a 'TODO' list.
+
+The long-term plan is for the text commands to become the communication protocol over a socket for a Flash client and possibly an Android client.  Text-based seems like the way to go until the bugs are ironed out.
+
+parseCommand and all functions beginning with 'prompt' are decisions to be made by the player.  The long-term plan for AI is to have an AI override each of these functions, probably separating them into their own player-type-specific classes (which will also handle different kinds of clients).  This is why playerPrompt provides a list of acceptable options in a list.  Acceptable options for the others can often be deduced from game state.  AIs could theoretically communicate over the socket, but in practice would probably want to use TTA.py as their hypothetical game state producer, since nobody would want to re-implement all of these goddamned card-specific rules.
+
+~K 7/19/10
